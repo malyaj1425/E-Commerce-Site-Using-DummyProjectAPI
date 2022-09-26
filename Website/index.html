@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zen's Inn</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body onload="default1()">
+    <div class="containers">
+      <div class="searchbox">
+        <button type="button" style="margin-right: 12px; width:100px;background-color:rgb(255, 255, 255);height:60px;border-radius:8px;border: 5px solid wheat; box-shadow: 7px 7px black;" >
+          <img src="img.png" width="100%">
+        </button>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Filter</button>
+          <div id="myDropdown" class="dropdown-content">
+            <div class="filter">
+              <a href="#smartphones" onclick="smartphones()">smartphones</a>
+              <a href="#laptops" onclick="laptops()">laptops</a>
+              <a href="#fragrances" onclick="fragrances()">fragrances</a>
+              <a href="#lighting" onclick="lighting()">lighting</a>
+              <a href="#sunglasses" onclick="sunglasses()">sunglasses</a>
+              <a href="#contact" onclick="default1()">none</a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="searchbox2"
+          onmousedown="demoDisplay()"
+          onmouseleave="hidedisplay()"
+        >
+          <input
+            type=""
+            name=""
+            id="search-input"
+            placeholder="Search for Category"
+            class="autocomplete-input"
+          />
+          <ul class="autocomplete-list" id="input-list"></ul>
+        </div>
+        
+        <div id="cart_container" style="background-color:rgb(255, 255, 255); width:400px; height:600px; position: absolute; z-index: 1; margin-bottom:40%;margin-top:75px; float:top; display:none; overflow: auto; border-radius: 20px; border: 5px solid wheat;
+        box-shadow: 0px 0px 7px 4px rgba(0, 0, 0, 0.425);">
+          <div id="cart_item" style="background-color:rgb(255, 255, 255);height:80%; overflow:auto;padding-left:80px; padding-top: 10px; padding-bottom:10px;"></div>
+          <div style="background-color:black;height:20%;">
+            <div style="display:flex; justify-content: center; color:purple;"><h1>TOTAL COST:&nbsp;$</h1><h1 id="total_cost">0</h1></div>
+            <div style="display:flex; justify-content: center;"><button id="buybtns"style="margin-top:5px;width:100px;  height:35px;background-color:turquoise; border-radius: 10px; border:5px solid wheat;"><b>BUY</b></button></div>
+          </div>
+        </div>
+        
+        <div>
+          <b><p id="itemno" style="position: absolute; margin-left:42px; margin-top: 1px; font-size:19px;">0</p></b>
+        <button type="button" class="buttonS" id="cartclick" onclick="loadcart()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"> <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/> </svg>
+          
+        </button></div>
+        
+      </div>
+    </div>
+    <div class="mains">
+      <div
+        class="row container-fluid gap-4 justify-content-center ms-1 mt-5"
+        id="cards"
+      ></div>
+    </div>  
+    <script>
+    
+    $(document).ready(function(){
+      $('#cartclick').click(function(){
+        $('#cart_container').toggle(500);
+      });
+    });</script>
+    <script src="script.js"></script>
+  </body>
+</html>
